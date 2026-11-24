@@ -1,2 +1,0 @@
-# vraksh
-Just for knowledge

@@ -8,19 +8,30 @@
    1. Understand the meanings of `relations` 🟢
    2. Understand the meaning of `pos` 🟢
    3. This will help to understand how scapy create the graph tree from a sentence. 🟢
-4. Lets call them scene no onwards
+4. Lets call them scene on onwards
    1. A scene can have following things 🟢
       1. Action 🟢
+         1. Main verbs are the actions 
       2. Doer of the action 🟢
+         1. nsubj is the doer of the action
       3. Receiver of the action 🟢
+         1. dobj or pobj could be potential receiver of the action
       4. Place of the action 🟢
+         1. prep is the place of the action
       5. Time of the action 🟢
-      6. Reason of the action 🟢
-      7. Changes in the state of the object during scene 🟢
-      8. Changes in the location of the objects during scene 🟢
-      9. Past or future reference of the events 🟢
-      10. Order of the actions / state changes etc 🔴    
-5. Implement a library, which consumes a scene and parse  🟢
+         1. prep with at or npadvmod of th action
+      6. Location of the object 
+         1. prep with 
+      7. Location of the doer 
+      8. Additional Information 🟢
+         1. Intrument of the action 🟢
+         2. Reason of the action 🟢
+         3. 
+      9.  Changes in the state of the object during scene 🟢
+      10. Changes in the location of the objects during scene 🟢
+      11. Past or future reference of the events 🟢
+      12. Order of the actions / state changes etc 🔴    
+5. Implement a library, which consumes a scene and parse the following items 🟢
    1. Implement a library which parse following items from the scene 🟢
       1. Actions in the scene 🟢 
       2. Doers of each action 🟢

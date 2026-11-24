@@ -1,6 +1,5 @@
 # Documentation
 
-
 ## Meaning of relations
 
 1. nsub
@@ -42,7 +41,7 @@
    1.  Adjective modifier
    2.  Sit next to noun
        1.  Examples
-           1.  Amit is a good(noun) boy(amod)
+           1.  Amit is a good(amod) boy(noun)
 11. acomp (adjective rel)
     1.  Adjective complement
     2.  Sit next to linking verb ( is , to be , become etc)

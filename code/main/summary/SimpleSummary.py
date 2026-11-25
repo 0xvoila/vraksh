@@ -1,15 +1,13 @@
 import os 
 import sys
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 
 import dateparser
 import pendulum 
-from parser import ActionParser, ActionDoerParser, BaseParser
+import ActionParser, ActionDoerParser, BaseParser
 from jinja2 import Template
 
-class SimpleSummary(BaseParser):
+class Engine(BaseParser):
     
     def __init__(self):
         self.subject_action_data = {}

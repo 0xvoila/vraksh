@@ -1,6 +1,6 @@
 import dateparser
 import pendulum
-from .BaseParser import BaseParser
+from BaseParser import BaseParser
 
 # VR-3434
 class ActionTemporalParser(BaseParser):

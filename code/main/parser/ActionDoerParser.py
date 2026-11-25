@@ -1,4 +1,4 @@
-from .BaseParser import BaseParser
+from BaseParser import BaseParser
 
 # VR-4323
 class ActionDoerParser(BaseParser):

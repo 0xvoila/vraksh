@@ -1,5 +1,5 @@
-from .BaseParser import BaseParser
-    
+from BaseParser import BaseParser
+
 class ActionParser(BaseParser):
 
     def get_action_list(self, scene):

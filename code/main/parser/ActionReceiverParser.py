@@ -1,4 +1,5 @@
-from .BaseParser import BaseParser
+from BaseParser import BaseParser
+from ActionParser import ActionParser
 
 # VR-1212
 class ActionReceiverParser(BaseParser):
@@ -37,16 +38,15 @@ class ActionReceiverParser(BaseParser):
 
 
 ### Testing 
-
-scene = nlp("I am playing with my calculator which is placed on the table")
 action_parser = ActionParser()
+scene = action_parser.nlp("I am playing with my calculator which is placed on the table")
 action_token_playing = action_parser.get_action_by_text(scene, "playing")
 
 action_receiver_parser = ActionReceiverParser()
 result = action_receiver_parser.get_action_receiver(action_token_playing)
 assert result[0].text == "calculator" 
 
-scene = nlp("I am going to school")
+scene = action_parser.nlp("I am going to school")
 action_parser = ActionParser()
 action_token_going = action_parser.get_action_by_text(scene, "going")
 
@@ -54,7 +54,7 @@ action_receiver_parser = ActionReceiverParser()
 result = action_receiver_parser.get_action_receiver(action_token_going)
 assert result[0].text == "school"
 
-scene = nlp("I am playing cricket in the ground")
+scene = action_parser.nlp("I am playing cricket in the ground")
 action_parser = ActionParser()
 action_token_playing = action_parser.get_action_by_text(scene, "playing")
 

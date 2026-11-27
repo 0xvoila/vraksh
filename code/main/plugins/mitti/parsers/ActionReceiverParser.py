@@ -13,7 +13,9 @@ class ActionReceiverParser():
 
             ## Now check if this action has any direct object which is non living
             if (token.dep_.casefold() == "dobj"):
-                result.append(ActionReceiver().set_spacy_token(token))
+                action_receiver = ActionReceiver()
+                action_receiver.set_spacy_token(token)
+                result.append(action_receiver)
 
             ## We have to handle the cases when object is not direct object and living object
             if (token.dep_.casefold() == "prep"):
@@ -32,7 +34,9 @@ class ActionReceiverParser():
 
             prep_obj_list = [child for child in token.children if child.dep_.casefold() == "pobj"]
             if list(prep_obj_list):
-                result.append(ActionReceiver().set_spacy_token(prep_obj_list[0]))
+                action_receiver = ActionReceiver()
+                action_receiver.set_spacy_token(prep_obj_list[0])
+                result.append(action_receiver)
 
         return result
 

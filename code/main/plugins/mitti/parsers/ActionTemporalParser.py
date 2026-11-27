@@ -23,7 +23,9 @@ class ActionTemporalParser():
                 temp_result.append("".join(tok.text_with_ws for tok in child.subtree).strip())
 
         self.result = " ".join(temp_result)
-        return ActionTime().set_action_time(self.result)
+        action_time = ActionTime()
+        action_time.set_action_time(self.result)
+        return action_time
     
 
     def print(self):

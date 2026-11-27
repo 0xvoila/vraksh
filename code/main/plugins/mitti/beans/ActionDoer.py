@@ -7,6 +7,8 @@ class ActionDoer:
 
     def set_spacy_token(self, spacy_token):
         self.action_doer_spacy_token = spacy_token
+
+        self.doer_text()
         self.is_person()
         self.is_gpe()
         self.is_organization()
@@ -17,6 +19,9 @@ class ActionDoer:
         self.is_work_of_art()
         self.is_law()
         self.is_language()
+
+    def doer_text(self):
+        return self.action_doer_spacy_token.text
 
     def is_person(self):
         return self.action_doer_spacy_token.ent_type_ == "PERSON" 

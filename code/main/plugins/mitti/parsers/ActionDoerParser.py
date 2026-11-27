@@ -12,7 +12,9 @@ class ActionDoerParser():
         for token in token_verb.get_spacy_token().children:
 
             if token.dep_.casefold() == "nsubj".casefold():
-                result.append(ActionDoer().set_spacy_token(token))
+                action_doer = ActionDoer()
+                action_doer.set_spacy_token(token)
+                result.append(action_doer)
 
         return result
 
@@ -22,7 +24,9 @@ class ActionDoerParser():
         for token in token_verb.get_spacy_token().children:
 
             if token.dep_.casefold() == "nsubj".casefold() and token.text.casefold() == token_text.casefold():
-                result.append(ActionDoer().set_spacy_token(token))
+                action_doer = ActionDoer()
+                action_doer.set_spacy_token(token)
+                result.append(action_doer)
 
         return result
 

@@ -1,5 +1,7 @@
 ## Mitti entity parser for actions, doers, and receivers
 import os 
+from pathlib import Path
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
 import spacy
 from plugins.kodak.TextToSentenceBreakerPlugin import TextToSentenceBreakerPlugin
 from plugins.mitti.parsers.ActionParser import ActionParser
@@ -53,5 +55,24 @@ class MittiPlugin:
                 })
 
     
+
+    def who_action(self, action):
+        templates_dir = Path(__file__).resolve().parent / "templates"
+        env = Environment(
+            loader=FileSystemLoader(templates_dir),
+            undefined=StrictUndefined,
+        )
+        template = env.get_template("who_action/Simple.text")
+        return template.render(action=action)
+    
+    
+    def who_actor(self, actor):
+        pass
+
+    def when_action(self, action):
+        pass
+
+    
+
     def display(self):
         displacy.serve(self.list_nlp_sentence, style="dep")
